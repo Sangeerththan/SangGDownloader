@@ -1,0 +1,6 @@
+tqdm
+requests
+python-libtorrent-bin==1.2.12
+pyperclip
+pytube
+wget
