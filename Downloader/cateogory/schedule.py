@@ -27,7 +27,7 @@ schedule.every(5).to(10).minutes.do(shutdown('no'))
 schedule.every().monday.do(shutdown('no'))
 
 # Every tuesday at 18:00
-schedule.every().tuesday.at("18:00").do(sudo_placement)
+schedule.every().tuesday.at("18:00").do(shutdown('no'))
 
 # Loop so that the scheduling task
 # keeps on running all time.
