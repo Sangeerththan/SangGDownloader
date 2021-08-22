@@ -4,3 +4,6 @@ python-libtorrent-bin==1.2.12
 pyperclip
 pytube
 wget
+QDarkStyle==2.8.1
+PyQt5==5.14.2
+PyQt5-sip==12.7.2
