@@ -1,17 +1,16 @@
 import datetime
 import os
+import re
 import time
 
 import pyperclip
 import pytube
 import wget
-import re
-
-from ..utils.file_operations import move_files, progress_function
-
+# pytube version 11.0.0 is needed
+from file_operations import move_files, progress_function
 links = []
 destination = "/home/sangee/Videos"
-movingDirectory = "/home/sangee/Videos/CuttingEdge/TensorFlow/Projects"
+movingDirectory = "/home/sangee/Videos/Songs/New/"
 
 
 def download_videos(_links, youtube=False):
@@ -21,7 +20,7 @@ def download_videos(_links, youtube=False):
         if youtube:
             count += 1
             yt = pytube.YouTube(link, on_progress_callback=progress_function)
-            yt.register_on_progress_callback(progress_function)
+            # yt.register_on_progress_callback(progress_function)
             for resolution in resolutions:
                 stream = yt.streams.filter(progressive=True, res=resolution).first()
                 if stream is not None:

@@ -13,13 +13,13 @@ from PyQt5.QtWidgets import (
     QMainWindow,
     QTableWidgetItem,
 )
-import utils
+import Utils
 from ui import UiMainWindow
 
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 IMG_PATH = os.path.join(BASE_PATH, "img")
-UTILS_PATH = os.path.join(BASE_PATH, "utils")
+UTILS_PATH = os.path.join(BASE_PATH, "Utils")
 
 
 class MainPage(QMainWindow, UiMainWindow):
@@ -364,7 +364,7 @@ class UrlLoading(QThread):
             self.override_error = True
 
         try:
-            videos_dict = utils.get_youtube_content(self.playlist_link, self.override_error)
+            videos_dict = Utils.get_youtube_content(self.playlist_link, self.override_error)
             if not videos_dict:
                 # if empty videos_dict returns, throw invalid url warning.
                 self.loadStatus.emit("invalid url")
@@ -399,7 +399,7 @@ class iTunesLoading(QThread):
             query_iter = ((row_index, key_value) for row_index, key_value in enumerate(self.videos_dict.items()))
         except AttributeError:  # i.e. no content in table -- exit early
             return
-        itunes_query = utils.map_threads(utils.thread_query_itunes, query_iter)
+        itunes_query = Utils.map_threads(Utils.thread_query_itunes, query_iter)
         itunes_query_tuple = tuple(itunes_query)
         if not self.check_itunes_nonetype(itunes_query_tuple):
             query_status = False
@@ -478,7 +478,7 @@ class DownloadingVideos(QThread):
             (key_value, (self.download_path, mp4_path), self.playlist_properties[index], self.save_as_mp4,)
             for index, key_value in enumerate(self.videos_dict.items())  # dict is naturally sorted in iteration
         )
-        utils.map_threads(utils.thread_query_youtube, video_properties)
+        Utils.map_threads(Utils.thread_query_youtube, video_properties)
         shutil.rmtree(mp4_path)  # remove mp4 dir
         time1 = time.time()
 

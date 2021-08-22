@@ -2,11 +2,11 @@ tqdm
 requests
 python-libtorrent-bin==1.2.12
 pyperclip
-pytube
+pytube=11.0.0
 wget
 QDarkStyle==2.8.1
 PyQt5==5.14.2
 PyQt5-sip==12.7.2
 numpy
 pyautogui
-tkinter
+urllib3
