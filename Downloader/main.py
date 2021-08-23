@@ -56,10 +56,11 @@ class Downloader:
         shut = self.shutdown_field.get()
         print(stream_type)
         if stream_type == 'Youtube':
-            links_copied_to_clipboard(stream_limit, youtube_regex)
+            _links = links_copied_to_clipboard(stream_limit, youtube_regex)
+            download_videos(_links, shut)
         elif stream_type == 'Torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
-            downloads(_links)
+            downloads(_links,shut)
 
 
 if __name__ == '__main__':
