@@ -42,7 +42,9 @@ class Downloader:
         self.tree.grid(row=6, column=0, columnspan=3, ipadx=10, ipady=10, sticky='ew')
         self.tree.heading('#0', text='Name', anchor=W)
         self.tree.heading("link", text='link', anchor=W)
-        self.tree.heading("status", text='staus', anchor=W)
+        self.tree.heading("status", text='status', anchor=W)
+        self.tree.grid_columnconfigure(1, weight=1)
+        self.tree.grid_columnconfigure(2, weight=1)
 
     def create_scrollbar(self):
         self.scrollbar = Scrollbar(orient='vertical', command=self.tree.yview)
@@ -57,7 +59,7 @@ class Downloader:
             download_videos(_links, shut)
         elif stream_type == 'Torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
-            downloads(_links,shut)
+            downloads(_links, shut)
 
 
 if __name__ == '__main__':
