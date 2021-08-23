@@ -3,10 +3,10 @@ import time
 import os
 
 from Downloader.Utils.tasks import shutdown
-BASE_PATH = "/home/sangee/Videos/Movies/New"
+from Downloader.Config import TORRENT_PATH
 
 
-def download_magnetic_link(_link, _path):
+def download_magnetic_link(_link, _path=TORRENT_PATH):
     ses = lt.session()
     ses.listen_on(6881, 6891)
     if not os.path.exists(_path):
@@ -31,8 +31,8 @@ def download_magnetic_link(_link, _path):
         time.sleep(5)
 
 
-def downloads(links, _path=BASE_PATH, _shutdown='no'):
+def downloads(links, _path=TORRENT_PATH, _shutdown='no'):
+    for link in links:
+        download_magnetic_link(link, _path)
     shutdown(_shutdown)
 
-
-downloads([], '', 'yes')
