@@ -1,16 +1,13 @@
 import datetime
 import os
-import re
 import time
-
-import pyperclip
 import pytube
 import wget
 
 # pytube version 11.0.0 is needed
 from Downloader.Utils.tasks import shutdown, links_copied_to_clipboard, get_download_inputs
 from Downloader.Utils.regex import youtube_regex
-from file_operations import move_files, progress_function
+from Downloader.Utils.file_operations import move_files, progress_function
 
 links = []
 destination = "/home/sangee/Videos"
