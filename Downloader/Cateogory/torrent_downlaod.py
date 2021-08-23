@@ -2,6 +2,7 @@ import libtorrent as lt
 import time
 import os
 
+from Downloader.Utils.tasks import shutdown
 BASE_PATH = "/home/sangee/Videos/Movies/New"
 
 
@@ -32,13 +33,6 @@ def download_magnetic_link(_link, _path):
 
 def downloads(links, _path=BASE_PATH, _shutdown='no'):
     shutdown(_shutdown)
-
-
-def shutdown(shut):
-    if shut == 'no':
-        exit()
-    else:
-        os.system("systemctl poweroff")
 
 
 downloads([], '', 'yes')

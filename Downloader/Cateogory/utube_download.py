@@ -6,8 +6,11 @@ import time
 import pyperclip
 import pytube
 import wget
+
 # pytube version 11.0.0 is needed
+from Downloader.Utils.tasks import shutdown
 from file_operations import move_files, progress_function
+
 links = []
 destination = "/home/sangee/Videos"
 movingDirectory = "/home/sangee/Videos/Songs/New/"
@@ -26,12 +29,12 @@ def download_videos(_links, youtube=False):
                 if stream is not None:
                     break;
             start_time = time.time()
-            print("Start Time for Download Link " + str(count)+": "+link + " " + str(datetime.datetime.now()))
+            print("Start Time for Download Link " + str(count) + ": " + link + " " + str(datetime.datetime.now()))
             print("Download Started ".center(50, "*"))
             stream.download(output_path=destination)
             finish_time = time.time();
             print("Download finished ".center(50, "*"))
-            print("Finish Time for Download Link "+link + " " + str(datetime.datetime.now()))
+            print("Finish Time for Download Link " + link + " " + str(datetime.datetime.now()))
             interval = finish_time - start_time
             duration = str(round(interval / 60, 3)) + " Minutes " + str(round(interval % 60, 3)) + " Seconds"
             print(("Time taken for downloading " + link + " is " + duration).center(50, "*"))
@@ -44,11 +47,6 @@ def download_videos(_links, youtube=False):
             print("Finished Downloading Non Youtube File".center(70, "*"))
 
 
-def shutdown(shut):
-    if shut == 'no':
-        exit()
-    else:
-        os.system("shutdown /s /t 1")
 
 
 def main():
