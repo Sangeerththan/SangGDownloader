@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui/downloader.ui'
+# Form implementation generated from reading UI file 'UI/downloader.UI'
 #
 # Created by: PyQt5 UI code generator 5.14.2
 #
@@ -207,7 +207,7 @@ class Ui_MainWindow(object):
         self.album_artwork.setFrameShape(QtWidgets.QFrame.Panel)
         self.album_artwork.setFrameShadow(QtWidgets.QFrame.Plain)
         self.album_artwork.setText("")
-        self.album_artwork.setPixmap(QtGui.QPixmap("ui/../img/default_artwork.png"))
+        self.album_artwork.setPixmap(QtGui.QPixmap("UI/../img/default_artwork.png"))
         self.album_artwork.setScaledContents(True)
         self.album_artwork.setAlignment(QtCore.Qt.AlignCenter)
         self.album_artwork.setObjectName("album_artwork")

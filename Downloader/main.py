@@ -14,7 +14,7 @@ from PyQt5.QtWidgets import (
     QTableWidgetItem,
 )
 import Utils
-from ui import UiMainWindow
+from UI import UiMainWindow
 
 
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
