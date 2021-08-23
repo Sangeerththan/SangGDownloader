@@ -59,7 +59,7 @@ class Downloader:
             download_videos(_links, shut)
         elif stream_type == 'Torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
-            downloads(_links, shut)
+            downloads(_links, None, shut)
 
 
 if __name__ == '__main__':
