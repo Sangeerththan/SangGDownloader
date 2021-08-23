@@ -13,6 +13,7 @@ class Downloader:
         ttk.style = ttk.Style()
         ttk.style.configure("Treeview", font=('helvetica', 10))
         ttk.style.configure("Treeview.Heading", font=('helvetica', 12, 'bold'))
+        self.show_links([], '')
 
     def create_gui(self):
         self.create_label_frame()
@@ -40,9 +41,9 @@ class Downloader:
     def create_tree_view(self):
         self.tree = ttk.Treeview(height=10, columns=("link", "status"), style='Treeview')
         self.tree.grid(row=6, column=0, columnspan=3, ipadx=10, ipady=10, sticky='ew')
-        self.tree.heading('#0', text='Name', anchor=W)
-        self.tree.heading("link", text='link', anchor=W)
-        self.tree.heading("status", text='status', anchor=W)
+        self.tree.heading('#0', text='Count', anchor=W)
+        self.tree.heading("link", text='Download Link', anchor=W)
+        self.tree.heading("status", text='Download status', anchor=W)
         self.tree.grid_columnconfigure(1, weight=1)
         self.tree.grid_columnconfigure(2, weight=1)
 
@@ -56,16 +57,30 @@ class Downloader:
         shut = self.shutdown_field.get()
         if stream_type == 'Youtube':
             _links = links_copied_to_clipboard(stream_limit, youtube_regex)
+            self.show_links(_links, 'Started')
             download_videos(_links, shut)
+            self.show_links(_links, 'Finished')
+
         elif stream_type == 'Torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
+            self.show_links(_links, 'Started')
             downloads(_links, None, shut)
+            self.show_links(_links, 'Finished')
+
+    def show_links(self, _links, status):
+        items = self.tree.get_children()
+        count = 0
+        for item in items:
+            self.tree.delete(item)
+        for link in _links:
+            count += 1
+            self.tree.insert('', 0, text=count, values=(link, status))
 
 
 if __name__ == '__main__':
     root = Tk()
-    root.title('Fast downloader By San G')
-    root.geometry("800x1000")
+    root.title('Copyrigt@Sangeerththan')
+    root.geometry("650x450")
     root.resizable(width=False, height=False)
     application = Downloader(root)
     root.mainloop()

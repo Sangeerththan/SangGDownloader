@@ -7,7 +7,7 @@ def shutdown(shut):
     if shut == 'yes':
         os.system("systemctl poweroff")
     else:
-        exit()
+        pass
 
 
 def links_copied_to_clipboard(limit, regex):
