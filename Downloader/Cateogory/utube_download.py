@@ -8,7 +8,8 @@ import pytube
 import wget
 
 # pytube version 11.0.0 is needed
-from Downloader.Utils.tasks import shutdown
+from Downloader.Utils.tasks import shutdown, links_copied_to_clipboard
+from Downloader.Utils.regex import youtube_regex
 from file_operations import move_files, progress_function
 
 links = []
@@ -47,24 +48,13 @@ def download_videos(_links, youtube=False):
             print("Finished Downloading Non Youtube File".center(70, "*"))
 
 
-
-
 def main():
-    youtube_regex = re.compile(r'''(http:|https:)?\/\/(www\.)?(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?
-    ''', re.VERBOSE)
-
     # Downloading limit of links
     download_limit = int(input("Enter links count: "))
     shut_down = input("Do you wish to shutdown your computer ? (yes / no): ")
-    while True:
-        copied_link = str(pyperclip.paste())
-        # print("youtube regex is:"+str(youtube_regex.findall(copied_link)))
-        match = youtube_regex.match(copied_link)
-        if match is not None:
-            links.append(copied_link)
-        if len(set(links)) >= download_limit:
-            break
-    unique_links = list(set(links))
+
+    # copying links based on regex and limit
+    unique_links = links_copied_to_clipboard(download_limit, youtube_regex)
     print("Download Links are" + str(unique_links))
     download_videos(unique_links, True)
 
