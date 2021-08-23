@@ -1,10 +1,8 @@
-from tkinter import Tk, Button, PhotoImage, Label, LabelFrame, W, E, Entry, Scrollbar
+from tkinter import Tk, Button, Label, LabelFrame, W, E, Entry, Scrollbar
 from tkinter import ttk
 
-from Downloader.Utils.tasks import links_copied_to_clipboard
-from Downloader.Utils.regex import *
-from Downloader.Cateogory.youtube import *
 from Downloader.Cateogory.torrent import *
+from Downloader.Cateogory.youtube import *
 
 
 class Downloader:
@@ -54,7 +52,6 @@ class Downloader:
         stream_type = self.download_type_field.get()
         stream_limit = int(self.limit_field.get())
         shut = self.shutdown_field.get()
-        print(stream_type)
         if stream_type == 'Youtube':
             _links = links_copied_to_clipboard(stream_limit, youtube_regex)
             download_videos(_links, shut)

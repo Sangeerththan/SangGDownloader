@@ -1,6 +1,6 @@
 import os
+
 import pyperclip
-import re
 
 
 def shutdown(shut):
