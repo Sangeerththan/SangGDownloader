@@ -21,3 +21,9 @@ def links_copied_to_clipboard(limit, regex):
             break
     unique_links = list(set(links))
     return unique_links
+
+
+def get_download_inputs():
+    download_limit = int(input("Enter links count: "))
+    shut_down = input("Do you wish to shutdown your computer ? (yes / no): ")
+    return download_limit, shut_down

@@ -8,7 +8,7 @@ import pytube
 import wget
 
 # pytube version 11.0.0 is needed
-from Downloader.Utils.tasks import shutdown, links_copied_to_clipboard
+from Downloader.Utils.tasks import shutdown, links_copied_to_clipboard, get_download_inputs
 from Downloader.Utils.regex import youtube_regex
 from file_operations import move_files, progress_function
 
@@ -50,8 +50,7 @@ def download_videos(_links, youtube=False):
 
 def main():
     # Downloading limit of links
-    download_limit = int(input("Enter links count: "))
-    shut_down = input("Do you wish to shutdown your computer ? (yes / no): ")
+    download_limit, shut_down = get_download_inputs()
 
     # copying links based on regex and limit
     unique_links = links_copied_to_clipboard(download_limit, youtube_regex)
