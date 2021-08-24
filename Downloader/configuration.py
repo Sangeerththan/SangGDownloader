@@ -7,8 +7,8 @@ CATEGORY_DIR = os.path.join(ROOT_DIR, "Cateogory")
 UI_DIR = os.path.join(ROOT_DIR, "UI")
 TEST_DIR = os.path.join(ROOT_DIR, "Test")
 
-
 # Stream Paths
 YOUTUBE_PATH = "/home/sangee/Videos/Youtube"
 TORRENT_PATH = "/home/sangee/Torrents"
 FB_PATH = "/home/sangee/Videos/Facebook"
+INSTAGRAM_PATH = "/home/sangee/Pictures/Instagram"

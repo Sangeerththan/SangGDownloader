@@ -3,8 +3,9 @@ from tkinter import Tk
 from Downloader.Cateogory.torrent import *
 from Downloader.Cateogory.youtube import *
 from Downloader.Cateogory.fb import fb_download_videos
+from Downloader.Cateogory.insta import download_insta_images
 from Downloader.UI.Widgets.widget import *
-from Downloader.Utils.regex import torrent_regex, youtube_regex, fb_regex
+from Downloader.Utils.regex import torrent_regex, youtube_regex, fb_regex, instagram_regex
 
 
 class Downloader:
@@ -46,6 +47,13 @@ class Downloader:
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
             fb_download_videos(_links, shut)
+            self.show_links(_links, 'Finished')
+            self.tree.update_idletasks()
+        elif stream_type in ['insta', 'instagram']:
+            _links = links_copied_to_clipboard(stream_limit, instagram_regex)
+            self.show_links(_links, 'Started')
+            self.tree.update_idletasks()
+            download_insta_images(_links, shut)
             self.show_links(_links, 'Finished')
             self.tree.update_idletasks()
 
