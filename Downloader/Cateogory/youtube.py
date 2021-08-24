@@ -6,7 +6,7 @@ import pytube
 from Downloader.Utils.file_operations import move_files, progress_function
 from Downloader.Utils.regex import youtube_regex
 from Downloader.Utils.tasks import shutdown, links_copied_to_clipboard, get_download_inputs
-from Downloader.Config.configuration import YOUTUBE_PATH
+from Downloader.configuration import YOUTUBE_PATH
 
 links = []
 destination = "/home/sangee/Videos"

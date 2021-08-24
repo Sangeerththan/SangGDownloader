@@ -2,7 +2,7 @@ import os
 import time
 import libtorrent as lt
 from Downloader.Utils.tasks import shutdown
-from Downloader.Config.configuration import TORRENT_PATH
+from Downloader.configuration import TORRENT_PATH
 
 
 def download_magnetic_link(_link, _path=TORRENT_PATH):

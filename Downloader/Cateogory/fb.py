@@ -3,7 +3,7 @@ from tqdm import tqdm
 import requests
 import re
 import os
-from Downloader.Config.configuration import FB_PATH
+from Downloader.configuration import FB_PATH
 from Downloader.Utils.tasks import shutdown
 
 
