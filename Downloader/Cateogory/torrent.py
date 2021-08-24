@@ -32,7 +32,7 @@ def download_magnetic_link(_link, _path=TORRENT_PATH):
         time.sleep(5)
 
 
-def downloads(links, _path=TORRENT_PATH, _shutdown='no'):
+def downloads(links, _shutdown='no', _path=TORRENT_PATH):
     # download_limit, _shut_down = get_download_inputs()
     # links = links_copied_to_clipboard(download_limit, torrent_regex)
     for link in links:

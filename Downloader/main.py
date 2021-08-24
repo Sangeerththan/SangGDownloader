@@ -67,7 +67,7 @@ class Downloader:
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
-            downloads(_links, None, shut)
+            downloads(_links, shut)
             self.show_links(_links, 'Finished')
             self.tree.update_idletasks()
 
