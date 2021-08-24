@@ -1,8 +1,6 @@
 from datetime import datetime
-from tqdm import tqdm
 import requests
-import re
-import os
+
 
 def download_video(video_url):
     """Download the video """
