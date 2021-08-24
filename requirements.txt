@@ -7,7 +7,6 @@ numpy~=1.21.1
 pyautogui~=0.9.53
 urllib3
 moviepy~=1.0.3
-selenium~=3.141.0
 requests
 bs4~=0.0.1
 lxml
