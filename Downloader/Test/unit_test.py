@@ -1,4 +1,7 @@
-from Downloader.Utils.regex import youtube_regex
+import re
+
+youtube_regex = re.compile(r'''(http:|https:)?\/\/(www\.)?(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?
+        ''', re.VERBOSE)
 
 
 def test_fb_youtube_regex():
