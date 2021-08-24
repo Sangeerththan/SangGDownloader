@@ -22,3 +22,9 @@ def progress_function(stream, _chunk, bytes_remaining):
     status = '█' * progress + '-' * (50 - progress)
     sys.stdout.write(' ↳ |{bar}| {percent}%\r'.format(bar=status, percent=percent))
     sys.stdout.flush()
+
+
+# create a folder if not exists
+def create_folder(_dir):
+    if not os.path.exists(_dir):
+        os.makedirs(_dir)
