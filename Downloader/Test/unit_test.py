@@ -1,4 +1,4 @@
-from ..Utils.regex import youtube_regex
+from Downloader.Utils.regex import youtube_regex
 
 
 def test_fb_youtube_regex():
