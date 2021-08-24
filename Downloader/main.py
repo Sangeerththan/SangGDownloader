@@ -1,9 +1,9 @@
-from tkinter import Tk, Button, Label, LabelFrame, W, E, Entry, Scrollbar
-from tkinter import ttk
+from tkinter import Tk
 
 from Downloader.Cateogory.torrent import *
 from Downloader.Cateogory.youtube import *
 from Downloader.UI.Widgets.widget import *
+from Downloader.Utils.regex import torrent_regex
 
 
 class Downloader:
