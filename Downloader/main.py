@@ -58,14 +58,18 @@ class Downloader:
         if stream_type == 'Youtube':
             _links = links_copied_to_clipboard(stream_limit, youtube_regex)
             self.show_links(_links, 'Started')
+            self.tree.update_idletasks()
             download_videos(_links, shut)
             self.show_links(_links, 'Finished')
+            self.tree.update_idletasks()
 
         elif stream_type == 'Torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
             self.show_links(_links, 'Started')
+            self.tree.update_idletasks()
             downloads(_links, None, shut)
             self.show_links(_links, 'Finished')
+            self.tree.update_idletasks()
 
     def show_links(self, _links, status):
         items = self.tree.get_children()
