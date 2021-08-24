@@ -1,9 +1,7 @@
-import libtorrent as lt
-import time
 import os
-
-from Downloader.Utils.tasks import shutdown, get_download_inputs, links_copied_to_clipboard
-from Downloader.Utils.regex import torrent_regex
+import time
+import libtorrent as lt
+from Downloader.Utils.tasks import shutdown
 from Downloader.configuration import TORRENT_PATH
 
 
@@ -33,10 +31,6 @@ def download_magnetic_link(_link, _path=TORRENT_PATH):
 
 
 def downloads(links, _shutdown='no', _path=TORRENT_PATH):
-    # download_limit, _shut_down = get_download_inputs()
-    # links = links_copied_to_clipboard(download_limit, torrent_regex)
     for link in links:
         download_magnetic_link(link, _path)
     shutdown(_shutdown)
-
-
