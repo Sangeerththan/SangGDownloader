@@ -11,3 +11,4 @@ TEST_DIR = os.path.join(ROOT_DIR, "../Test")
 # Stream Paths
 YOUTUBE_PATH = "/home/sangee/Videos"
 TORRENT_PATH = "/home/sangee/Torrents"
+FB_PATH = "/home/sangee/Videos"
