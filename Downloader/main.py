@@ -22,10 +22,10 @@ class Downloader:
         create_scrollbar(self)
 
     def on_add_links_button_clicked(self):
-        stream_type = self.download_type_field.get()
+        stream_type = self.download_type_field.get().lower()
         stream_limit = int(self.limit_field.get())
         shut = self.shutdown_field.get()
-        if stream_type == 'Youtube':
+        if stream_type in[ 'youtube', 'utube']:
             _links = links_copied_to_clipboard(stream_limit, youtube_regex)
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
@@ -33,7 +33,7 @@ class Downloader:
             self.show_links(_links, 'Finished')
             self.tree.update_idletasks()
 
-        elif stream_type == 'Torrent':
+        elif stream_type == 'torrent':
             _links = links_copied_to_clipboard(stream_limit, torrent_regex)
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
