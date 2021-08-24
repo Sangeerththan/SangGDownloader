@@ -2,8 +2,9 @@ from tkinter import Tk
 
 from Downloader.Cateogory.torrent import *
 from Downloader.Cateogory.youtube import *
+from Downloader.Cateogory.fb import fb_download_videos
 from Downloader.UI.Widgets.widget import *
-from Downloader.Utils.regex import torrent_regex
+from Downloader.Utils.regex import torrent_regex, youtube_regex, fb_regex
 
 
 class Downloader:
@@ -25,7 +26,7 @@ class Downloader:
         stream_type = self.download_type_field.get().lower()
         stream_limit = int(self.limit_field.get())
         shut = self.shutdown_field.get()
-        if stream_type in[ 'youtube', 'utube']:
+        if stream_type in ['youtube', 'utube']:
             _links = links_copied_to_clipboard(stream_limit, youtube_regex)
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
@@ -38,6 +39,13 @@ class Downloader:
             self.show_links(_links, 'Started')
             self.tree.update_idletasks()
             downloads(_links, shut)
+            self.show_links(_links, 'Finished')
+            self.tree.update_idletasks()
+        elif stream_type in ['fb', 'facebook']:
+            _links = links_copied_to_clipboard(stream_limit, fb_regex)
+            self.show_links(_links, 'Started')
+            self.tree.update_idletasks()
+            fb_download_videos(_links, shut)
             self.show_links(_links, 'Finished')
             self.tree.update_idletasks()
 
