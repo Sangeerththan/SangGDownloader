@@ -3,8 +3,8 @@ from tkinter import ttk
 
 
 def create_label_frame(self):
-    labelframe = LabelFrame(self.root, text='SAN G DOWNLOADER', bg="sky blue", font="helvetica 10")
-    labelframe.grid(row=0, column=1, padx=8, pady=8, sticky='ew')
+    labelframe = LabelFrame(self.root, text='SAN G DOWNLOADER', bg="#e009d9", font=("Monotype Sorts", 15))
+    labelframe.grid(row=0, column=1, padx=8, pady=8, sticky='e')
     Label(labelframe, text='Download Type   :', bg="#040d57", fg="white").grid(row=1, column=1, sticky=W, pady=2,
                                                                           padx=15)
     self.download_type_field = Entry(labelframe)
@@ -25,10 +25,10 @@ def create_label_frame(self):
 
 def create_tree_view(self):
     self.tree = ttk.Treeview(height=10, columns=("link", "status"), style='Treeview')
-    self.tree.grid(row=6, column=0, columnspan=3, ipadx=10, ipady=10, sticky='ew')
-    self.tree.heading('#0', text='Count', anchor=W)
-    self.tree.heading("link", text='Download Link', anchor=W)
-    self.tree.heading("status", text='Download status', anchor=W)
+    self.tree.grid(row=6, column=0, columnspan=3, ipadx=15, ipady=25, sticky='e')
+    self.tree.heading('#0', text='Count', anchor='center')
+    self.tree.heading("link", text='Download Link', anchor='center')
+    self.tree.heading("status", text='Download status', anchor='center')
     self.tree.grid_columnconfigure(1, weight=1)
     self.tree.grid_columnconfigure(2, weight=1)
 
