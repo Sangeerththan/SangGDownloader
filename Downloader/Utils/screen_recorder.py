@@ -8,27 +8,28 @@ from tkinter.filedialog import asksaveasfilename
 import time
 import sys
 
+
 def run():
     # display screen resolution, get it from your OS settings
     SCREEN_SIZE = pyautogui.size()
     # define the codec
     fourcc = cv2.VideoWriter_fourcc(*"XVID")
     # create the video write object
-    file_name = asksaveasfilename(confirmoverwrite=False,defaultextension='.avi')
+    file_name = asksaveasfilename(confirmoverwrite=False, defaultextension='.avi')
     out = cv2.VideoWriter(file_name, fourcc, 20.0, (SCREEN_SIZE))
     print("Recording Started...\n")
-    odd=1
+    odd = 1
     while True:
-        odd+=1
+        odd += 1
         # make a screenshot
         img = pyautogui.screenshot()
         # convert these pixels to a proper numpy array to work with OpenCV
         frame = np.array(img)
         # convert colors from BGR to RGB
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        if(odd==10):
+        if (odd == 10):
             cv2.imshow("Recording...", frame)
-            odd=1
+            odd = 1
         # if the user clicks q, it exits
         if cv2.waitKey(1) == ord("q"):
             cv2.destroyAllWindows()
@@ -39,27 +40,32 @@ def run():
     root.destroy()
     sys.exit(0)
 
+
 def screenshot():
     root.destroy()
     print("Screen Shot...\n")
     time.sleep(1)
     myScreenshot = pyautogui.screenshot()
-    file_name = asksaveasfilename(confirmoverwrite=False,defaultextension='.png')
+    file_name = asksaveasfilename(confirmoverwrite=False, defaultextension='.png')
     myScreenshot.save(file_name)
     sys.exit(0)
-    
+
+
 root = tk.Tk()
 root.title("San G Recorder")
 root.geometry("600x220")
 
-root.configure(background = '#e6e5e5')
-frame = tk.Frame(root,bg = '#e6e5e5',pady = 1, width =550, height = 50)
-frame.grid(row=0,column=0)
-frame.pack()  
-label0 = tk.Label(frame,font=('Comic Sans MS',26,'bold'),text = "San G Recorder".center(50, "*"),bg= '#337AFF',fg='white',justify ="center")
+root.configure(background='#e6e5e5')
+frame = tk.Frame(root, bg='#e6e5e5', pady=1, width=550, height=50)
+frame.grid(row=0, column=0)
+frame.pack()
+label0 = tk.Label(frame, font=('Comic Sans MS', 26, 'bold'), text="San G Recorder".center(50, "*"), bg='#337AFF',
+                  fg='white', justify="center")
 label0.pack(side=tk.TOP)
-button =tk.Button(frame, font=('arial', 20,'bold'), text="Start Recording Videos",padx=2,pady=2, bg="#33FFEC",fg = "white",command=run)
+button = tk.Button(frame, font=('arial', 20, 'bold'), text="Start Recording Videos", padx=2, pady=2, bg="#33FFEC",
+                   fg="white", command=run)
 button.pack(side=tk.TOP)
-button1 =tk.Button(frame, font=('arial', 20,'bold'), text="Take Screenshot",padx=2,pady=2, bg="#7133FF",fg = "white",command=screenshot)
+button1 = tk.Button(frame, font=('arial', 20, 'bold'), text="Take Screenshot", padx=2, pady=2, bg="#7133FF", fg="white",
+                    command=screenshot)
 button1.pack()
 root.mainloop()
