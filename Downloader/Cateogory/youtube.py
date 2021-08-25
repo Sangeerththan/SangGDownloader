@@ -13,7 +13,6 @@ def download_youtube_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
     for link in _links:
         count += 1
         yt = pytube.YouTube(link, on_progress_callback=progress_function)
-        # yt.register_on_progress_callback(progress_function)
         for resolution in resolutions:
             stream = yt.streams.filter(progressive=True, res=resolution).first()
             if stream is not None:
