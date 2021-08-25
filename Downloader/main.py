@@ -23,12 +23,14 @@ class Downloader:
         create_label_frame(self)
         create_tree_view(self)
         create_scrollbar(self)
+        # create_progress_bar(self)
 
     def on_add_links_button_clicked(self):
         stream_type = self.download_type_field.get().lower()
         stream_limit = int(self.limit_field.get())
         shut = self.shutdown_field.get()
         if stream_type in ['youtube', 'utube']:
+            create_progress_bar(self)
             self.download_strategy(stream_limit, shut, youtube_regex, download_youtube_videos)
         elif stream_type == 'torrent':
             self.download_strategy(stream_limit, shut, torrent_regex, download_torrents)

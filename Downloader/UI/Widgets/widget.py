@@ -1,20 +1,21 @@
 from tkinter import Button, Label, LabelFrame, W, E, Entry, Scrollbar
 from tkinter import ttk
+from tkinter.ttk import Progressbar
 
 
 def create_label_frame(self):
     labelframe = LabelFrame(self.root, text='SAN G DOWNLOADER', bg="#e009d9", font=("Monotype Sorts", 15))
     labelframe.grid(row=0, column=1, padx=8, pady=8, sticky='e')
     Label(labelframe, text='Download Type   :', bg="#040d57", fg="white").grid(row=1, column=1, sticky=W, pady=2,
-                                                                          padx=15)
+                                                                               padx=15)
     self.download_type_field = Entry(labelframe)
     self.download_type_field.grid(row=1, column=2, sticky=W, padx=5, pady=2)
     Label(labelframe, text='ShutDown yes/no:', bg="#040d57", fg="white").grid(row=2, column=1, sticky=W, pady=2,
-                                                                            padx=15)
+                                                                              padx=15)
     self.shutdown_field = Entry(labelframe)
     self.shutdown_field.grid(row=2, column=2, sticky=W, padx=5, pady=2)
     Label(labelframe, text='Download Limit  :', bg="#040d57", fg="white").grid(row=3, column=1, sticky=W, pady=2,
-                                                                           padx=15)
+                                                                               padx=15)
     self.limit_field = Entry(labelframe)
     self.limit_field.grid(row=3, column=2, sticky=W, padx=5, pady=2)
     Button(labelframe, text='Add Links', command=self.on_add_links_button_clicked, bg="blue", fg="white").grid(
@@ -36,3 +37,8 @@ def create_tree_view(self):
 def create_scrollbar(self):
     self.scrollbar = Scrollbar(orient='vertical', command=self.tree.yview)
     self.scrollbar.grid(row=6, column=3, rowspan=10, sticky='sn')
+
+
+def create_progress_bar(self):
+    self.progress_bar = Progressbar(orient='horizontal')
+    self.progress_bar.grid(row=6, column=3, rowspan=10, sticky='ew')
