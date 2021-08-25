@@ -6,12 +6,13 @@ from Downloader.Cateogory.fb import download_fb_videos
 from Downloader.Cateogory.insta import download_insta_images
 from Downloader.UI.Widgets.widget import *
 from Downloader.Utils.regex import torrent_regex, youtube_regex, fb_regex, instagram_regex
+from Downloader.Utils.tasks import links_copied_to_clipboard
 
 
 class Downloader:
 
-    def __init__(self, root):
-        self.root = root
+    def __init__(self, app_root):
+        self.root = app_root
         self.create_gui()
         ttk.style = ttk.Style()
         ttk.style.configure("Treeview", font=('helvetica', 10))
