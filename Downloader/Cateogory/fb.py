@@ -29,7 +29,7 @@ def download(link):
     print("\nVideo downloaded successfully.")
 
 
-def fb_download_videos(_links, _shutdown='no', _path=FB_PATH):
+def download_fb_videos(_links, _shutdown='no', _path=FB_PATH):
     os.chdir(_path)
     for link in _links:
         download(link)

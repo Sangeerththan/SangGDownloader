@@ -13,7 +13,7 @@ destination = "/home/sangee/Videos"
 movingDirectory = "/home/sangee/Videos/Songs/New/"
 
 
-def download_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
+def download_youtube_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
     resolutions = ["1080p", "720p", "480p", "360p"]
     count = 0
     for link in _links:
@@ -44,7 +44,7 @@ def main():
     # copying links based on regex and limit
     unique_links = links_copied_to_clipboard(download_limit, youtube_regex)
     print("Download Links are" + str(unique_links))
-    download_videos(unique_links, True)
+    download_youtube_videos(unique_links, True)
 
     # check whether directory is present
     if not os.path.exists(movingDirectory):

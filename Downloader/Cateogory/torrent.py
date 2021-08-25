@@ -30,7 +30,7 @@ def download_magnetic_link(_link, _path=TORRENT_PATH):
         time.sleep(5)
 
 
-def downloads(links, _shutdown='no', _path=TORRENT_PATH):
+def download_torrents(links, _shutdown='no', _path=TORRENT_PATH):
     for link in links:
         download_magnetic_link(link, _path)
     shutdown(_shutdown)
