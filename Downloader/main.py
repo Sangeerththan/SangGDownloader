@@ -37,6 +37,12 @@ class Downloader:
         elif stream_type in ['insta', 'instagram']:
             self.download_strategy(stream_limit, shut, instagram_regex, download_insta_images)
 
+    def on_clear_links_button_clicked(self):
+        self.show_links([], '')
+        self.download_type_field.delete(0, 'end')
+        self.limit_field.delete(0, 'end')
+        self.shutdown_field.delete(0, 'end')
+
     def show_links(self, _links, status):
         items = self.tree.get_children()
         count = 0
