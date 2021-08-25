@@ -13,7 +13,7 @@ destination = "/home/sangee/Videos"
 movingDirectory = "/home/sangee/Videos/Songs/New/"
 
 
-def download_videos(_links, _path=YOUTUBE_PATH, _shutdown='no'):
+def download_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
     resolutions = ["1080p", "720p", "480p", "360p"]
     count = 0
     for link in _links:
@@ -27,7 +27,7 @@ def download_videos(_links, _path=YOUTUBE_PATH, _shutdown='no'):
         start_time = time.time()
         print("Start Time for Download Link " + str(count) + ": " + link + " " + str(datetime.datetime.now()))
         print("Download Started ".center(50, "*"))
-        stream.download(output_path=destination)
+        stream.download(output_path=_path)
         finish_time = time.time();
         print("Download finished ".center(50, "*"))
         print("Finish Time for Download Link " + link + " " + str(datetime.datetime.now()))
