@@ -50,7 +50,7 @@ def create_tree_view(self):
 
 
 def create_scrollbar(self):
-    self.scrollbar = Scrollbar(orient='vertical', command=self.tree.yview)
+    self.scrollbar = Scrollbar(orient='vertical', command=self.tree.yview, bg='blue')
     self.scrollbar.grid(row=6, column=3, rowspan=10, sticky='sn')
 
 
