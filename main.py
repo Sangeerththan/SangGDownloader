@@ -73,7 +73,7 @@ class Downloader:
 if __name__ == '__main__':
     root = Tk()
     root.protocol("WM_DELETE_WINDOW", root.quit)
-    root.title('Copyrigt@Sangeerththan')
+    root.title('Copyright@Sangeerththan')
     root.config(bg='sky blue')
     root.geometry("650x450")
     root.resizable(width=False, height=False)
