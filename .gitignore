@@ -1,0 +1,5 @@
+dist
+dist.zip
+build
+.pytest_cache
+main.spec
