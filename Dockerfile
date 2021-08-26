@@ -5,4 +5,4 @@ RUN pwd
 RUN cd .. \
     pip install -r requirements.txt
 
-CMD [ "python", "Downloader/main.py" ]
+CMD [ "python", "main.py" ]
