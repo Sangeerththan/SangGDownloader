@@ -1,28 +1,35 @@
+from __future__ import unicode_literals
 import datetime
 import time
 import pytube
-
+import youtube_dl
 from Downloader.Utils.file_operations import progress_function
 from Downloader.Utils.tasks import shutdown
 from Downloader.configuration import YOUTUBE_PATH
 from Downloader.Utils.file_operations import create_folder
+import os
 
 
-def download_youtube_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
+def download_youtube_videos(_links, _shutdown='no', _path=YOUTUBE_PATH):
     create_folder(_path)
     resolutions = ["1080p", "720p", "480p", "360p"]
     count = 0
     for link in _links:
         count += 1
-        yt = pytube.YouTube(link, on_progress_callback=progress_function)
-        for resolution in resolutions:
-            stream = yt.streams.filter(progressive=True, res=resolution).first()
-            if stream is not None:
-                break;
+        # yt = pytube.YouTube(link, on_progress_callback=progress_function)
+        # for resolution in resolutions:
+        #     stream = yt.streams.filter(progressive=True, res=resolution).first()
+        #     if stream is not None:
+        #         break;
         start_time = time.time()
         print("Start Time for Download Link " + str(count) + ": " + link + " " + str(datetime.datetime.now()))
         print("Download Started ".center(50, "*"))
-        stream.download(output_path=_path)
+        # stream.download(output_path=_path)
+        ydl_opts = {
+            'outtmpl': os.path.join(_path, '%(title)s.%(ext)s')
+        }
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([link])
         finish_time = time.time();
         print("Download finished ".center(50, "*"))
         print("Finish Time for Download Link " + link + " " + str(datetime.datetime.now()))

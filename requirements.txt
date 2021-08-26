@@ -16,3 +16,5 @@ Pillow~=7.0.0
 DateTime~=4.3
 beautifulsoup4~=4.9.3
 pytest
+setuptools~=45.2.0
+youtube_dl
