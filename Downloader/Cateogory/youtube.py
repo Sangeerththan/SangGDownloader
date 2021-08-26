@@ -5,9 +5,11 @@ import pytube
 from Downloader.Utils.file_operations import progress_function
 from Downloader.Utils.tasks import shutdown
 from Downloader.configuration import YOUTUBE_PATH
+from Downloader.Utils.file_operations import create_folder
 
 
 def download_youtube_videos(_links, _shutdown='no',_path=YOUTUBE_PATH):
+    create_folder(_path)
     resolutions = ["1080p", "720p", "480p", "360p"]
     count = 0
     for link in _links:

@@ -5,6 +5,7 @@ import re
 import os
 from Downloader.configuration import FB_PATH
 from Downloader.Utils.tasks import shutdown
+from Downloader.Utils.file_operations import create_folder
 
 
 def download(link):
@@ -30,6 +31,7 @@ def download(link):
 
 
 def download_fb_videos(_links, _shutdown='no', _path=FB_PATH):
+    create_folder(_path)
     os.chdir(_path)
     for link in _links:
         download(link)

@@ -4,6 +4,7 @@ import time
 import os
 from Downloader.configuration import INSTAGRAM_PATH
 from Downloader.Utils.tasks import shutdown
+from Downloader.Utils.file_operations import create_folder
 
 
 def download_insta_image(link):
@@ -18,6 +19,7 @@ def download_insta_image(link):
 
 
 def download_insta_images(_links, _shutdown='no', _path=INSTAGRAM_PATH):
+    create_folder(_path)
     os.chdir(_path)
     for link in _links:
         download_insta_image(link)

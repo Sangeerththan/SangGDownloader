@@ -3,6 +3,7 @@ import time
 import libtorrent as lt
 from Downloader.Utils.tasks import shutdown
 from Downloader.configuration import TORRENT_PATH
+from Downloader.Utils.file_operations import create_folder
 
 
 def download_magnetic_link(_link, _path=TORRENT_PATH):
@@ -31,6 +32,7 @@ def download_magnetic_link(_link, _path=TORRENT_PATH):
 
 
 def download_torrents(links, _shutdown='no', _path=TORRENT_PATH):
+    create_folder(_path)
     for link in links:
         download_magnetic_link(link, _path)
     shutdown(_shutdown)
