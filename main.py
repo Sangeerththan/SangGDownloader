@@ -12,6 +12,10 @@ from Downloader.UI.Widgets.widget import *
 from Downloader.Utils.regex import torrent_regex, youtube_regex, fb_regex, instagram_regex
 from Downloader.Utils.tasks import links_copied_to_clipboard
 
+if os.environ.get('DISPLAY', '') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
+
 
 class Downloader:
 
