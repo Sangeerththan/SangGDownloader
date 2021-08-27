@@ -17,4 +17,4 @@ DateTime~=4.3
 beautifulsoup4~=4.9.3
 pytest
 setuptools~=45.2.0
-youtube_dl
+youtube_dl==2020.12.14
