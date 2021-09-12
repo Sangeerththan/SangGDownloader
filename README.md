@@ -3,7 +3,9 @@ Application which can Download Any streaming media. Currently, It supports downl
 
 # Installation 
 ./Installer/install.sh
-
+ 
+ #Demo of Application
+ ./Downloader/Test/test.mp4
 
 # Docker setup
 If Docker is not installed in the system run:
