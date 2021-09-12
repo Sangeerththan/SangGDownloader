@@ -3,9 +3,10 @@ Application which can Download Any streaming media. Currently, It supports downl
 
 # Installation 
 ./Installer/install.sh
- 
- #Demo of Application
- ./Downloader/Test/test.mp4
+
+ <video controls="true" allowfullscreen="true">
+   <source src="DownloaderDemo.mp4" type="mp4">
+ </video>
 
 # Docker setup
 If Docker is not installed in the system run:
