@@ -18,3 +18,11 @@ Then Navigate to the directory where dockerfile is located
 .
 # Important Notice
 Adhere to the regulations of the content provider when using this Software and will not be responsible for any consequences of using this software.
+
+# Contribution Guidelines
+Feel free to fork my repo and if you can make
+1. Feature Improvements
+2. Doc Updates
+3. Tests
+4. Support for non unix platforms
+All kinds of pull requests will be highly appreciated.
