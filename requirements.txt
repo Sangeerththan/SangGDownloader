@@ -11,7 +11,7 @@ lxml
 schedule~=1.1.0
 opencv-python~=4.5.3.56
 future~=0.18.2
-Pillow~=7.0.0
+Pillow~=8.3.2
 DateTime~=4.3
 beautifulsoup4~=4.9.3
 pytest
