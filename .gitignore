@@ -3,3 +3,5 @@ dist.zip
 build
 .pytest_cache
 main.spec
+.idea
+__pycache__
