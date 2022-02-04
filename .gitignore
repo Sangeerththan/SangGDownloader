@@ -3,3 +3,4 @@ dist.zip
 build
 .pytest_cache
 main.spec
+Downloader/Cateogory/__pycache__/
