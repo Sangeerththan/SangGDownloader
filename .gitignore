@@ -5,3 +5,6 @@ build
 main.spec
 Downloader/Cateogory/__pycache__/
 .idea
+Downloader/Utils/__pycache__/
+Downloader/__pycache__/
+__pycache__/
