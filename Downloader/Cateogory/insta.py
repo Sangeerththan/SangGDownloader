@@ -15,7 +15,6 @@ def download_insta_image(link):
     r = requests.get(img_url)
     with open("instagram" + str(time.time()) + ".png", 'wb') as f:
         f.write(r.content)
-    print('success')
 
 
 def download_insta_images(_links, _shutdown='no', _path=INSTAGRAM_PATH):
