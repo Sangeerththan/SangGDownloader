@@ -9,8 +9,8 @@ Currently, It supports downloading YouTube, Facebook , Magnetic Links in torrent
 - [Virtual environment steps](https://docs.python.org/3/library/venv.html)
 
 # Docker setup
-If Docker is not installed in the system run:
-sudo apt  install docker.io
+If Docker is not installed in the system install it with below command.
+- sudo apt  install docker.io
 
 Then Navigate to the directory where dockerfile is located
 1. sudo docker build -t downloader .
