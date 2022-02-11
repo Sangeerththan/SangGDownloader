@@ -27,7 +27,6 @@ def download(link):
             t.update(len(data))
             f.write(data)
     t.close()
-    print("\nVideo downloaded successfully.")
 
 
 def download_fb_videos(_links, _shutdown='no', _path=FB_PATH):
