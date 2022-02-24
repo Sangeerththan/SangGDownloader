@@ -21,7 +21,7 @@ Adhere to the regulations of the content provider when using this Software.
 I will not be responsible for any consequences of using this software.
 
 # Contribution Guidelines
-Feel free to fork my repo and if you can make any of the below will be great.
+Feel free to fork my repo and if you can make any of the below contributions will be great.
 1. Feature Improvements
 2. Doc Updates
 3. Tests
