@@ -3,7 +3,7 @@ Extensible Application which can Download Any streaming media.
 Currently, It supports downloading YouTube, Facebook , Magnetic Links in torrent and Instagram Images
 
 # Installation 
-- sh ./Installer/install.sh
+- `sh ./Installer/install.sh`
 - In case of any dependency conflicts better to run the installer inside a virtual environment.
 - Follow the below documentation for virtual environment creation.
 - [Virtual environment steps](https://docs.python.org/3/library/venv.html)
@@ -13,8 +13,8 @@ If Docker is not installed in the system install it with below command.
 - sudo apt  install docker.io
 
 Then Navigate to the directory where dockerfile is located
-1. sudo docker build -t downloader .
-2. sudo docker run downloader
+1. `sudo docker build -t downloader .`
+2. `sudo docker run downloader`
 .
 # Important Notice
 Adhere to the regulations of the content provider when using this Software. 
