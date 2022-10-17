@@ -2,7 +2,7 @@ tqdm~=4.43.0
 requests~=2.23.0
 python-libtorrent-bin==1.2.12
 pyperclip~=1.8.2
-numpy~=1.21.1
+numpy>=1.22
 pyautogui~=0.9.53
 urllib3
 moviepy~=1.0.3
