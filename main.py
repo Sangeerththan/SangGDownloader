@@ -4,7 +4,6 @@ import sys
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from tkinter import Tk
 
-# from Downloader.Cateogory.torrent import *
 from Downloader.Cateogory.youtube import *
 from Downloader.Cateogory.fb import download_fb_videos
 from Downloader.Cateogory.insta import download_insta_images
