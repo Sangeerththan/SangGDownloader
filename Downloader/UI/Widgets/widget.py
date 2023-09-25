@@ -18,9 +18,9 @@ def create_label_frame(self):
                                                                                padx=15)
     self.limit_field = Entry(labelframe)
     self.limit_field.grid(row=3, column=2, sticky=W, padx=5, pady=2)
-    Button(labelframe, text='Add Links', command=self.on_add_links_button_clicked, bg="blue", fg="white").grid(
+    Button(labelframe, text='Add Links', command=self.on_add_links_button_clicked, bg="blue").grid(
         row=4, column=2, sticky=E, padx=5, pady=5)
-    Button(labelframe, text='   clear   ', command=self.on_clear_links_button_clicked, bg="blue", fg="white").grid(
+    Button(labelframe, text='   clear   ', command=self.on_clear_links_button_clicked, bg="blue").grid(
         row=4, column=1, sticky='e', padx=15, pady=5)
 
 

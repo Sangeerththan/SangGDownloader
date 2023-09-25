@@ -38,8 +38,6 @@ class Downloader:
         shut = self.shutdown_field.get()
         if stream_type in ['youtube', 'utube']:
             self.download_strategy(stream_limit, shut, youtube_regex, download_youtube_videos)
-        elif stream_type == 'torrent':
-            self.download_strategy(stream_limit, shut, torrent_regex, download_torrents)
         elif stream_type in ['fb', 'facebook']:
             self.download_strategy(stream_limit, shut, fb_regex, download_fb_videos)
         elif stream_type in ['insta', 'instagram']:
