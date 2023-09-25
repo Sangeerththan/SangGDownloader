@@ -1,6 +1,6 @@
 tqdm~=4.43.0
 requests~=2.23.0
-python-libtorrent-bin==1.2.12
+torrent
 pyperclip~=1.8.2
 numpy>=1.22
 pyautogui~=0.9.53
@@ -9,7 +9,7 @@ moviepy~=1.0.3
 bs4~=0.0.1
 lxml
 schedule~=1.1.0
-opencv-python~=4.5.3.56
+opencv-python~=4.8.0.76
 future~=0.18.2
 Pillow~=9.0.0
 DateTime~=4.3
